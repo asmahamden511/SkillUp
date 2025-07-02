@@ -1,0 +1,67 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { 
+  CVTemplate,
+  UserCV,
+  ApiResponse
+} from '../models/interfaces';
+import { AuthService } from './auth.service';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CvService {
+  private apiUrl = 'https://localhost:7000/api/CV';
+
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService
+  ) {}
+
+  getTemplates(): Observable<CVTemplate[]> {
+    const headers = this.authService.getAuthHeaders();
+    return this.http.get<CVTemplate[]>(`${this.apiUrl}/templates`, { headers });
+  }
+
+  createCV(cvData: Partial<UserCV>): Observable<UserCV> {
+    const headers = this.authService.getAuthHeaders();
+    return this.http.post<UserCV>(`${this.apiUrl}/create`, cvData, { headers });
+  }
+
+  updateCV(id: number, cvData: Partial<UserCV>): Observable<UserCV> {
+    const headers = this.authService.getAuthHeaders();
+    return this.http.put<UserCV>(`${this.apiUrl}/${id}`, cvData, { headers });
+  }
+
+  getUserCVs(): Observable<UserCV[]> {
+    const headers = this.authService.getAuthHeaders();
+    return this.http.get<UserCV[]>(`${this.apiUrl}/user-cvs`, { headers });
+  }
+
+  getCV(id: number): Observable<UserCV> {
+    const headers = this.authService.getAuthHeaders();
+    return this.http.get<UserCV>(`${this.apiUrl}/${id}`, { headers });
+  }
+
+  exportToPDF(id: number): Observable<Blob> {
+    const headers = this.authService.getAuthHeaders();
+    return this.http.post(`${this.apiUrl}/${id}/export-pdf`, {}, { 
+      headers, 
+      responseType: 'blob' 
+    });
+  }
+
+  generatePDF(cvData: any): Observable<Blob> {
+    const headers = this.authService.getAuthHeaders();
+    return this.http.post(`${this.apiUrl}/generate-pdf`, cvData, { 
+      headers, 
+      responseType: 'blob' 
+    });
+  }
+
+  deleteCV(id: number): Observable<any> {
+    const headers = this.authService.getAuthHeaders();
+    return this.http.delete(`${this.apiUrl}/${id}`, { headers });
+  }
+}
