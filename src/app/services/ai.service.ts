@@ -1,16 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { 
-  AIConversation,
-  AIMessage,
-  ChatRequest,
-  SkillAnalysisRequest,
-  SkillAnalysisResult,
-  CareerRecommendationRequest,
-  CareerRecommendation,
-  ApiResponse
-} from '../models/interfaces';
+import{AIConversation}from '../models/aiconversation';
+import{AIMessage}from '../models/aimessage';
+import{ChatRequest}from '../models/chat-request';
+import{SkillAnalysisRequest}from '../models/skill-analysis-request';
+import{SkillAnalysisResult}from '../models/skill-analysis-result';
+import{CareerRecommendationRequest}from '../models/career-recommendation-request';
+import{CareerRecommendation}from '../models/career-recommendation';
+import {ApiResponse} from '../models/api-response';
 import { AuthService } from './auth.service';
 
 @Injectable({

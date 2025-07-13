@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { 
-  CVTemplate,
-  UserCV,
-  ApiResponse
-} from '../models/interfaces';
+import { CVTemplate} from '../models/cvtemplate'
+import { UserCV} from '../models/user-cv'
+import { ApiResponse} from '../models/api-response'
 import { AuthService } from './auth.service';
 
 @Injectable({

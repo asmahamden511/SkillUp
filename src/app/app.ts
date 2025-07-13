@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { AuthService } from './services/auth.service';
-import { User } from './models/interfaces';
+import { User } from './models/user';
 
 @Component({
   selector: 'app-root',

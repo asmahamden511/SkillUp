@@ -1,6 +1,29 @@
+/* CSS with vibrant colors and improved typography */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+:root {
+  --primary-color: #3a86ff;
+  --secondary-color: #2667cc;
+  --accent-color: #00b4d8;
+  --success-color: #38b000;
+  --error-color: #ff4d6d;
+  --surface-primary: #b279de;
+  --surface-secondary: #432a5f;
+  --border-color: #877dca;
+  --text-primary: #212529;
+  --text-secondary: #495057;
+  --text-light: #6c757d;
+  --primary-gradient-start: #3a86ff;
+  --primary-gradient-end: #2667cc;
+  --accent-gradient-start: #00b4d8;
+  --accent-gradient-end: #0096c7;
+}
+
 .cv-builder-container {
+  font-family: 'Poppins', sans-serif;
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--surface-primary) 0%, var(--surface-secondary) 100%);
+  background: linear-gradient(135deg, var(--surface-primary) 80%, var(--surface-secondary) 100%);
   padding: 2rem;
   
   .header-section {
@@ -8,7 +31,7 @@
     background: linear-gradient(135deg, var(--primary-gradient-start) 0%, var(--primary-gradient-end) 100%);
     border-radius: 24px;
     padding: 3rem;
-    color: white;
+    color: rgb(144, 71, 168);
     position: relative;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
@@ -56,6 +79,9 @@
           font-size: 2.5rem;
           font-weight: 700;
           letter-spacing: -0.02em;
+          line-height: 1.2;
+          font-family: 'Montserrat', sans-serif;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         
         p {
@@ -63,6 +89,7 @@
           font-size: 1.2rem;
           opacity: 0.9;
           font-weight: 300;
+          line-height: 1.5;
         }
       }
     }
@@ -115,6 +142,8 @@
             font-size: 0.9rem;
             font-weight: 500;
             opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
           }
           
           &.active span {
@@ -122,6 +151,7 @@
             color: var(--primary-color);
             border-color: white;
             box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
           }
           
           &.completed span {
@@ -234,12 +264,14 @@
             font-weight: 700;
             color: var(--text-primary);
             letter-spacing: -0.01em;
+            line-height: 1.3;
           }
           
           p {
             margin: 0;
             color: var(--text-secondary);
             font-size: 1rem;
+            line-height: 1.5;
           }
         }
       }
@@ -286,6 +318,7 @@
             font-size: 1rem;
             padding: 1rem;
             color: var(--text-primary);
+            line-height: 1.5;
           }
         }
         
@@ -293,6 +326,10 @@
           font-weight: 500;
         }
         
+        .mat-mdc-form-field-subscript-wrapper {
+          font-size: 0.8rem;
+        }
+      }
     }
     
     // Experience and Education Cards
@@ -324,6 +361,7 @@
           gap: 0.75rem;
           font-weight: 600;
           font-size: 1.1rem;
+          line-height: 1.4;
           
           mat-icon {
             font-size: 1.25rem;
@@ -356,6 +394,7 @@
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
       margin-top: 1.5rem;
       transition: all 0.3s ease;
+      line-height: 1.5;
       
       &:hover {
         transform: translateY(-2px);
@@ -415,6 +454,7 @@
         padding: 0.75rem 1.5rem;
         font-weight: 600;
         text-transform: none;
+        line-height: 1.5;
         
         mat-icon {
           margin-right: 0.5rem;
@@ -457,6 +497,7 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      line-height: 1.4;
       
       &::before {
         content: '';
@@ -471,6 +512,7 @@
       color: var(--text-secondary);
       margin-bottom: 1rem;
       font-size: 0.95rem;
+      line-height: 1.5;
     }
   }
   
@@ -493,6 +535,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    line-height: 1.5;
     
     &:hover {
       transform: translateY(-2px);
@@ -521,6 +564,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     border: 1px solid var(--border-color);
+    line-height: 1.5;
     
     &:hover {
       background: var(--primary-color);
@@ -548,6 +592,7 @@
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     border: 1px solid var(--border-color);
     margin-bottom: 2rem;
+    line-height: 1.6;
     
     .preview-header {
       text-align: center;
@@ -561,6 +606,8 @@
         font-weight: 700;
         color: var(--text-primary);
         letter-spacing: -0.02em;
+        line-height: 1.2;
+        font-family: 'Montserrat', sans-serif;
       }
       
       .contact-info {
@@ -576,6 +623,7 @@
           gap: 0.5rem;
           color: var(--text-secondary);
           font-size: 1rem;
+          line-height: 1.5;
           
           mat-icon {
             font-size: 1.25rem;
@@ -610,6 +658,7 @@
         color: var(--text-primary);
         padding-bottom: 0.75rem;
         border-bottom: 2px solid var(--primary-color);
+        line-height: 1.3;
         
         mat-icon {
           color: var(--primary-color);
@@ -635,6 +684,7 @@
             font-size: 1.25rem;
             font-weight: 600;
             color: var(--text-primary);
+            line-height: 1.4;
           }
           
           .company,
@@ -642,6 +692,7 @@
             color: var(--accent-color);
             font-weight: 500;
             font-size: 1rem;
+            line-height: 1.5;
           }
         }
         
@@ -650,6 +701,7 @@
           font-size: 0.9rem;
           margin: 0 0 0.75rem 0;
           font-weight: 500;
+          line-height: 1.5;
         }
         
         .description {
@@ -662,6 +714,7 @@
           color: var(--success-color);
           font-weight: 600;
           margin: 0.5rem 0 0 0;
+          line-height: 1.5;
         }
       }
     }
@@ -678,6 +731,7 @@
         border-radius: 20px;
         font-weight: 500;
         font-size: 0.9rem;
+        line-height: 1.5;
       }
     }
   }
@@ -696,6 +750,7 @@
       font-size: 1rem;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
+      line-height: 1.5;
       
       &:hover:not(:disabled) {
         transform: translateY(-2px);
@@ -816,206 +871,5 @@
   
   .form-content {
     animation: fadeIn 0.4s ease-in-out;
-  }
-}
-  
-  .suggested-skills {
-    margin-top: 24px;
-    
-    h4 {
-      color: #666;
-      font-size: 14px;
-      font-weight: 500;
-      margin-bottom: 12px;
-    }
-    
-    .suggested-chip {
-      background-color: #f5f5f5;
-      color: #333;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      
-      &:hover {
-        background-color: #e8f5e8;
-        color: #2e7d32;
-        transform: translateY(-1px);
-      }
-    }
-  }
-  
-  // Preview section styles
-  .cv-preview {
-    background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 32px;
-    margin: 24px 0;
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    
-    .preview-section {
-      margin-bottom: 32px;
-      
-      &:last-child {
-        margin-bottom: 0;
-      }
-      
-      h3 {
-        font-size: 24px;
-        font-weight: 600;
-        color: #1976d2;
-        margin-bottom: 8px;
-      }
-      
-      h4 {
-        font-size: 18px;
-        font-weight: 500;
-        color: #333;
-        margin-bottom: 16px;
-        padding-bottom: 8px;
-        border-bottom: 2px solid #e0e0e0;
-      }
-      
-      .preview-item {
-        margin-bottom: 20px;
-        
-        strong {
-          font-weight: 500;
-          color: #333;
-          display: block;
-          margin-bottom: 4px;
-        }
-        
-        .date-range {
-          color: #666;
-          font-size: 14px;
-          font-style: italic;
-          margin-bottom: 8px;
-        }
-        
-        p {
-          color: #555;
-          margin: 0;
-        }
-      }
-      
-      .skills-preview {
-        .skill-tag {
-          color: #1976d2;
-          font-weight: 500;
-        }
-      }
-    }
-  }
-  
-  .generation-actions {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    margin-top: 32px;
-    
-    button {
-      min-width: 160px;
-      padding: 12px 24px;
-      
-      mat-spinner {
-        margin-right: 8px;
-      }
-      
-      mat-icon {
-        margin-right: 8px;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      flex-direction: column;
-      
-      button {
-        width: 100%;
-      }
-    }
-  }
-}
-
-// Responsive design
-@media (max-width: 768px) {
-  .cv-builder-container {
-    padding: 16px;
-    
-    .cv-stepper {
-      .step-form {
-        mat-card {
-          mat-card-content {
-            padding: 16px;
-          }
-        }
-      }
-    }
-    
-    .cv-preview {
-      padding: 20px;
-    }
-  }
-}
-
-// Material theme customizations
-.mat-stepper-header {
-  .mat-step-icon {
-    background-color: #1976d2;
-  }
-  
-  .mat-step-icon-selected {
-    background-color: #1976d2;
-  }
-  
-  .mat-step-label {
-    font-weight: 500;
-  }
-}
-
-.mat-form-field-appearance-outline {
-  .mat-form-field-outline-thick {
-    color: #1976d2;
-  }
-  
-  &.mat-focused {
-    .mat-form-field-label {
-      color: #1976d2;
-    }
-  }
-}
-
-// Custom animations
-.experience-item,
-.education-item {
-  animation: slideIn 0.3s ease-out;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-// Print styles for CV preview
-@media print {
-  .cv-builder-container {
-    .cv-stepper,
-    .generation-actions,
-    .step-actions {
-      display: none;
-    }
-    
-    .cv-preview {
-      border: none;
-      box-shadow: none;
-      margin: 0;
-      padding: 0;
-    }
   }
 }

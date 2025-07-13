@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { FileUpload } from '../models/interfaces';
+import { FileUpload } from '../models/file-upload';
 import { AuthService } from './auth.service';
 
 @Injectable({
