@@ -449,12 +449,12 @@ mat-card {
         margin: 0 0 0.5rem 0;
         font-size: 1.1rem;
         font-weight: 600;
-        color: var(--text-primary);
+        color: black;
       }
       
       p {
         margin: 0;
-        color: var(--text-secondary);
+        color:gray;
         font-size: 0.95rem;
         line-height: 1.5;
       }
@@ -496,12 +496,12 @@ mat-card {
     }
     
     &.danger-zone {
-      background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
-      border-color: #feb2b2;
+       //background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+      //border-color: #feb2b2;
       
       .action-info {
         h4 {
-          color: var(--error-color);
+          color: black;
         }
       }
     }
@@ -720,6 +720,138 @@ button {
     
     &:hover {
       background: var(--accent-color);
+    }
+  }
+}
+
+/* متغيرات الألوان المعدلة */
+:root {
+  --text-primary: #2D3748; /* أسود غامق/رمادي داكن */
+  --text-secondary: #4A5568; /* رمادي متوسط */
+  --text-light: #718096; /* رمادي فاتح */
+  --primary-color: #4361ee; /* اللون الأساسي الأزرق */
+  --accent-color: #4895ef; /* اللون التكميلي */
+  --surface-primary: #F7FAFC; /* خلفية فاتحة */
+  --surface-secondary: #FFFFFF; /* أبيض */
+  --border-color: #E2E8F0; /* حدود فاتحة */
+  --error-color: #E53E3E; /* لون الخطأ */
+}
+
+.profile-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: var(--surface-primary);
+}
+
+/* تعديلات رأس الملف الشخصي */
+.profile-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  
+  .profile-header-content {
+    .user-info {
+      h2 {
+        color: white; /* تغيير من التدرج إلى الأبيض الصلب */
+        -webkit-text-fill-color: white;
+        background: none;
+      }
+      
+      .user-email {
+        color: rgba(255, 255, 255, 0.9);
+      }
+      
+      .user-role {
+        color: white;
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+}
+
+/* تحسين وضوح النصوص */
+mat-card {
+  mat-card-header {
+    mat-card-title {
+      color: black;
+    }
+    
+    mat-card-subtitle {
+      color: rgba(0, 0, 0, 0.542);
+    }
+  }
+  
+  mat-card-content {
+    color: var(--text-primary);
+  }
+}
+
+/* تحسين حقول الإدخال */
+::ng-deep .mat-mdc-form-field {
+  .mat-mdc-text-field-wrapper {
+    background-color: white;
+    
+    .mat-mdc-form-field-input-control input,
+    .mat-mdc-form-field-input-control textarea {
+      color: var(--text-primary);
+    }
+  }
+  
+  .mat-mdc-floating-label {
+    color: var(--text-secondary);
+    
+    &.mdc-floating-label--float-above {
+      color: var(--primary-color);
+    }
+  }
+}
+
+/* تحسين الأزرار */
+mat-card-actions {
+  button[color="primary"] {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: white;
+  }
+}
+
+/* تحسين قسم المهارات */
+.skills-section {
+  h4 {
+    color:#4361ee;
+  }
+  
+  ::ng-deep mat-chip {
+    color: white;
+  }
+}
+
+/* تحسين إجراءات الحساب */
+.account-actions {
+  .action-item {
+    h4 {
+      color:rgb(41, 40, 40);
+    }
+    
+    p {
+      color:rgb(79, 76, 76);
+    }
+  }
+}
+
+/* تحسينات للعرض على الأجهزة المحمولة */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 1rem;
+  }
+  
+  .profile-header .profile-header-content {
+    flex-direction: column;
+    text-align: center;
+    
+    .user-info {
+      h2 {
+        font-size: 1.8rem;
+      }
     }
   }
 }
