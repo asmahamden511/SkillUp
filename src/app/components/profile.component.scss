@@ -480,7 +480,7 @@ mat-card {
       
       &[color="warn"] {
         background: linear-gradient(135deg, var(--warning-color) 0%, #ff6b6b 100%);
-        color: white;
+        color: #8226a1;
         border: none;
         
         &:hover {
@@ -496,8 +496,8 @@ mat-card {
     }
     
     &.danger-zone {
-       //background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
-      //border-color: #feb2b2;
+       background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+      border-color: #feb2b2;
       
       .action-info {
         h4 {
